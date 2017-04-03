@@ -1,0 +1,6 @@
+C:\Users\Student\Documents\Visual Studio 2015\Projects\CosimirConsole\CosimirConsole\bin\Debug\CosimirConsole.exe.config
+C:\Users\Student\Documents\Visual Studio 2015\Projects\CosimirConsole\CosimirConsole\bin\Debug\CosimirConsole.exe
+C:\Users\Student\Documents\Visual Studio 2015\Projects\CosimirConsole\CosimirConsole\bin\Debug\CosimirConsole.pdb
+C:\Users\Student\Documents\Visual Studio 2015\Projects\CosimirConsole\CosimirConsole\obj\Debug\CosimirConsole.csprojResolveAssemblyReference.cache
+C:\Users\Student\Documents\Visual Studio 2015\Projects\CosimirConsole\CosimirConsole\obj\Debug\CosimirConsole.exe
+C:\Users\Student\Documents\Visual Studio 2015\Projects\CosimirConsole\CosimirConsole\obj\Debug\CosimirConsole.pdb
