@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="MyCosimir.Xyz"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyCosimir"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="166,363,0,0" VerticalAlignment="Top" Width="100"/>
+        <Slider x:Name="slider1" HorizontalAlignment="Left" Margin="166,504,0,0" VerticalAlignment="Top" Width="100"/>
+        <Slider x:Name="slider2" HorizontalAlignment="Left" Margin="215,613,0,0" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+</Page>
