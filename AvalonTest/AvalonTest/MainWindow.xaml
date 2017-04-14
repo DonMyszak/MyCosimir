@@ -1,0 +1,102 @@
+﻿<Window x:Class="AvalonTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock" 
+        xmlns:local="clr-namespace:AvalonTest"
+        mc:Ignorable="d"
+        Title="MyCosimir" Height="720" Width="1280" WindowState="Maximized" Icon="ikona.ico">
+
+    <Grid>
+
+        <!-- Grid Row definitions -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="24"/>
+        </Grid.RowDefinitions>
+
+        <!-- Main Menu items -->
+        <Menu>
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Click="menuOpen"/>
+                <MenuItem Header="_Save" Click="menuSave"/>
+                <MenuItem Header="_Save as..." Click="menuSaveAs"/>
+                <MenuItem Header="_Exit" Click="menuExit"/>
+            </MenuItem>
+            <MenuItem Header="_Run" Click="menuRun"></MenuItem>
+
+        </Menu>
+
+
+        <ad:DockingManager x:Name="dockManager" Grid.Row="1">
+            <ad:ResizingPanel Orientation="Vertical">
+
+                <!-- pierwszy rzad-->
+                <ad:ResizingPanel Orientation="Horizontal">
+
+                    <!--Pozycje-->
+                    <ad:DockablePane ad:ResizingPanel.ResizeHeight="100" ad:ResizingPanel.ResizeWidth="400">
+                        <ad:DockableContent Title="Positions" x:Name="PositionsContent">
+                            <ListBox>
+                                <ListBoxItem Content="Position_1"/>
+                                <ListBoxItem Content="Position_2"/>
+                                <ListBoxItem Content="Position_3"/>
+                            </ListBox>
+                        </ad:DockableContent>
+                    </ad:DockablePane>
+
+
+                    <!-- Script Editor -->
+                    <ad:DocumentPane Name="ScriptEditorPane">
+
+                        <ad:DocumentPane.CommandBindings>
+                            <CommandBinding Command="{x:Static local:MainWindow.MyCommand}" Executed="MyCommandExecuted"/>
+                        </ad:DocumentPane.CommandBindings>
+
+                        <ad:DocumentContent Title="Script">
+                            <TextBox x:Name="textBoxEditor" Margin="0,0,0,0" TextWrapping="Wrap"
+                                ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" />
+                        </ad:DocumentContent>
+                    </ad:DocumentPane>
+                </ad:ResizingPanel>
+
+                <!-- drugi rzad-->
+                <ad:ResizingPanel Orientation="Horizontal">
+
+                    <!-- XYZ, Joints, Tool-->
+                    <ad:DockablePane ad:ResizingPanel.ResizeWidth="400">
+                        <ad:DockableContent x:Name="XYZContent" Title="XYZ">
+
+                            <!-- wnętrze XYZ-->
+
+                        </ad:DockableContent>
+
+                        <ad:DockableContent x:Name="JointsContent" Title="Joints">
+
+                            <!-- wnętrze joints-->
+
+                        </ad:DockableContent>
+
+                        <ad:DockableContent x:Name="ToolContent" Title="Tool">
+
+                            <!-- wnętrze tool-->
+
+                        </ad:DockableContent>
+                    </ad:DockablePane>
+                    <!--Terminal-->
+                    <ad:DockablePane ad:ResizingPanel.ResizeHeight="100">
+                        <ad:DockableContent Title="Terminal" x:Name="TerminalContent">
+                            <TextBox x:Name="textBoxTerminal" Margin="0,0,0,0" TextWrapping="Wrap"
+                                ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                        </ad:DockableContent>
+                    </ad:DockablePane>
+                </ad:ResizingPanel>
+            </ad:ResizingPanel>
+        </ad:DockingManager>
+        <StatusBar Grid.Row="2">
+            <StatusBarItem Content="Cosimir, but better."/>
+        </StatusBar>
+    </Grid>
+</Window>
